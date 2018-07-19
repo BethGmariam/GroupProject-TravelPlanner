@@ -2,7 +2,7 @@
 
 A day-by-day travel planner. A user will be able select a specific date. Once a date is selected the user can add their point-of-interests to a list of “To-do” items. Based on items added to their list, users can query different API’s to load information (such as images and reviews) to help with their research. Once the list is confirmed, the user can press a submit button to add their list to Google Calendar.
 
-Follow the link: https://chrissythebuilder.github.io/TravelPlanner/
+Follow the link:https://bethgmariam.github.io/Travel-Planner/
 
 ## Getting Started
 
