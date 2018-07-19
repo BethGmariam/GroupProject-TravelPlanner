@@ -73,6 +73,7 @@ function landingSubmit() {
     // Add onclick even for the submit "add-item" button.
     submit2.on("click", function (event) {
         event.preventDefault();
+        localStorage.clear();
 
         fromDate = $("#fromDate").val().trim();
         toDate = $("#toDate").val().trim();
@@ -97,7 +98,7 @@ function landingSubmit() {
         }
 
         for (var i = 0; i < total; i++) {
-            var listDiv = $("<div>");
+            var listDiv = $("<div style='margin-bottom: 15px;'>");
             var listButton = $("<button style='background-color: #4B4B4B; width: 200px; display: block; margin:auto'>");
 
             // listDiv.addClass("row");
@@ -229,9 +230,9 @@ function runGeneral() {
                             console.log(rating);
                             var resultDiv = $("<div style='display:block; float:left' class='col col-4'>");
                             var btn = $("<button class='btn btn-link genBtn'>");
-                            var h7 = $("<h7>");
+                            var h7 = $("<br><h7>");
                             // var image = $("");
-                            var anchor = $("<a target='_blank' href=" + site + "><img src=" + img + " style='height: auto; width:100%; max-width: 360px' class='travelImages'></a>");
+                            var anchor = $("<br><a target='_blank' href=" + site + "><img src=" + img + " style='height: auto; width:100%; max-width: 360px' class='travelImages'></a>");
                             btn.text(name);
                             h7.text("Rating: " + rating);
                             btn.attr({
@@ -383,43 +384,42 @@ function showItinerary() {
     })
 }
 
-// Allows user to sign-out
-function signOut() {
-    $(".signout-button").on("click", function (event) {
-        alert("this works!");
+   // Allows user to sign-out
+   function signOut() {
+    $("#signout-button").on("click", function (event) {
+        // alert("this works!");
 
-        localStorage.clear();
-        var d = destination.val().trim();
-        // destination = destination.val().trim();
-        localStorage.setItem("destination", d);
-        console.log(d);
-        alert(localStorage.getItem("destination"));
-        alert(localStorage.getItem("search"));
-        alert(parseInt(localStorage.getItem("totalDays")));
+        // localStorage.clear();
+        // var d = destination.val().trim();
+        // var search = search.val().trim();
+        // var totalDays = totalDays.val().trim();
+        // var listArray = listArray.val().trim();
+        // // destination = destination.val().trim();
+        // console.log(d);
+        // console.log(search);
+        // console.log(totalDays);
+
+        // localStorage.setItem("destination", d);
+        // localStorage.setItem("search", search);
+        // localStorage.setItem("totalDays", totalDays);
+        // localStorage.setItem("listArray", listArray);
+        // console.log(localStorage.setItem("destination", d));
+        // console.log(localStorage.setItem("search", search));
+        // console.log(localStorage.setItem("totalDays", totalDays));
+        // console.log(localStorage.setItem("listArray", listArray));
+        
     })
 }
 
 // 
 function returnItinerary() {
     $("#current-itinerary").on("click", function () {
-        // INSERT LOCAL STORAGE GET FUNCTIONS HERE
-        // ...
-    // $("#current-itinerary").on("click", function() {
-        var tempDest=localStorage.getItem("destination")
-        var tempSearch=localStorage.getItem("search")// advancedSearch or genSearch
-        var tempTotalDay=(parseInt(localStorage.getItem("totalDays")));
-        alert(tempDest)
-        alert(tempSearch)
-        alert(tempTotalDay)
-        $('#itineraryDisplay').append("<li>" + tempDest+ "</li>" +
-        "<li>" + tempSearch+ "</li>" +
-        "<li>" + tempTotalDay+ "</li>" 
-    )
-    //     // window.location = "index.html";
-    
-    //   })
+        // localStorage.getItem("destination");
+        // localStorage.getItem("search");// advancedSearch or genSearch
+        // localStorage.getItem("totalDays");
+        // localStorage.getItem("listArray");
 
-            //    
+        // window.location = "index.html";
         landing.hide();
         planning.hide();
         itinerary.show();
